@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 
 class HomeController extends Controller
 {
     //restituisce la home
     public function index()
     {
+        $movies = [];
         return view('movies.index');
     }
 
