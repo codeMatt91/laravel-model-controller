@@ -10,4 +10,10 @@ class HomeController extends Controller
     {
         return view('movies.index');
     }
+
+    //gestisce la pagina movie
+    public function show()
+    {
+        return view('movies.show');
+    }
 }
