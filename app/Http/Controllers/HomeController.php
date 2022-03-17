@@ -9,13 +9,16 @@ class HomeController extends Controller
     //restituisce la home
     public function index()
     {
-        $movies = [];
-        return view('movies.index');
+        $movies = Movie::all(); // SELECT * FROM 'movies'
+
+        return view('movies.index', compact('movies'));
     }
 
     //gestisce la pagina movie
-    public function show()
+    public function show($id)
     {
-        return view('movies.show');
+
+        $movie = Movie::find($id);
+        return view('movies.show', compact('movie'));
     }
 }

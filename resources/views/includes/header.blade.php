@@ -11,7 +11,7 @@
                 <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('movie') ? 'active' : '' }}" href="">Selected Movie</a>
+                <a class="nav-link {{ request()->routeIs('movies.show') ? 'active' : '' }}" href="{{route('movies.show', ['id' => $movie->id])}}">Selected Movie</a>
             </li>
             
             </ul>

@@ -8,12 +8,18 @@
     <p class="text-center"> Benvenuti sul nostro sito di film </p>
 
     <div class="row">
-        <div class="col">
-            <h1>title</h1>
-            <h4>original title</h4>
-            <address>- nationality -</address>
-            <div> date</div>
-            <div>vote</div>
+        <div class="row gy-3">
+            @foreach ($movies as $movie)
+            <div class="col-4 text-center border border-2">
+                <div class="p-3">
+                    <h2>{{$movie->title}}</h2>
+                    <h5>{{$movie->original_title}}</h5>
+                    <address>- {{$movie->nationality}} -</address>
+                    <div> {{date("M d Y", strtotime($movie->date))}}</div>
+                    <div>{{$movie->vote}}</div>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>
