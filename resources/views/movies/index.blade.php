@@ -16,7 +16,12 @@
                     <h5>{{$movie->original_title}}</h5>
                     <address>- {{$movie->nationality}} -</address>
                     <div> {{date("M d Y", strtotime($movie->date))}}</div>
-                    <div>{{$movie->vote}}</div>
+                    <div>
+                        @for ($i = 1; $i <= floor($movie->vote); $i++)
+                        <i class="fas fa-star"></i>   
+                        @endfor
+                        
+                    </div>
                 </div>
             </div>
             @endforeach
