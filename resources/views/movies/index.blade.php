@@ -12,9 +12,9 @@
             @foreach ($movies as $movie)
             <div class="col-4 text-center border border-2">
                 <div class="p-3">
-                    <h2><a href="{{route('movies.show', ['id' => $movie->id])}}"> {{$movie->title}} </a></h2>
+                    <h2><a class="text-decoration-none" href="{{route('movies.show', ['id' => $movie->id])}}"> {{$movie->title}} </a></h2>
                     <h5>{{$movie->original_title}}</h5>
-                    <address>- {{$movie->nationality}} -</address>
+                    <div class="fst-italic">- {{$movie->nationality}} -</div>
                     <div> {{date("M d Y", strtotime($movie->date))}}</div>
                     <div>
                         @for ($i = 1; $i <= floor($movie->vote/2); $i++)
@@ -32,3 +32,4 @@
     </div>
 </div>
 @endsection
+    
