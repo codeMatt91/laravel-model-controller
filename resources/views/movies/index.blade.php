@@ -12,7 +12,7 @@
             @foreach ($movies as $movie)
             <div class="col-4 text-center border border-2">
                 <div class="p-3">
-                    <h2>{{$movie->title}}</h2>
+                    <h2><a href="{{route('movies.show', ['id' => $movie->id])}}"> {{$movie->title}} </a></h2>
                     <h5>{{$movie->original_title}}</h5>
                     <address>- {{$movie->nationality}} -</address>
                     <div> {{date("M d Y", strtotime($movie->date))}}</div>

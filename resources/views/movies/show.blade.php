@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-        <div class="card">
+        <div class="card text-center">
             <div class="p-3">
                 <h2>{{$movie->title}}</h2>
                 <h5>{{$movie->original_title}}</h5>
