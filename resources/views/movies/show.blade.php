@@ -12,12 +12,7 @@
                 <div class="fst-italic">- {{$movie->nationality}} -</div>
                 <div> {{date("M d Y", strtotime($movie->date))}}</div>
                 <div>
-                    @for ($i = 1; $i <= floor($movie->vote/2); $i++)
-                        <i class="fas fa-star"></i>   
-                    @endfor
-                    @for ($i = 1; $i <= floor(6 - ($movie->vote/2)); $i++)
-                        <i class="far fa-star"></i>   
-                    @endfor
+                    @include('includes.stars_logic')
                 </div>
             </div>
         </div>
